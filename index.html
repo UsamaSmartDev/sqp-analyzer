@@ -1,0 +1,1182 @@
+"; }
+    .chart-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .chart-subtitle { font-size: 11px; color: var(--text-secondary); margin-bottom: 14px; }
+    .chart-wrap { position: relative; height: 260px; }
+    .chart-wrap.tall { height: 320px; }
+    .chart-wrap.short { height: 200px; }
+
+    /* FUNNEL */
+    .funnel-container { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 0; }
+    .funnel-step { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 480px; }
+    .funnel-bar-wrap { flex: 1; position: relative; height: 36px; }
+    .funnel-bar { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; font-size: 12px; font-weight: 700; color: #fff; transition: width 0.6s ease; }
+    .funnel-label { font-size: 12px; color: var(--text-secondary); width: 90px; text-align: right; }
+    .funnel-count { font-size: 12px; font-weight: 700; width: 80px; text-align: right; }
+    .funnel-rate { font-size: 11px; color: var(--text-secondary); width: 60px; }
+    .funnel-arrow { font-size: 14px; color: #ccc; text-align: center; }
+
+    /* DATA TABLE */
+    .table-section { background: var(--bg-card); border-radius: var(--radius); box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: var(--gap); }
+    .table-controls { padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f0f0f0; flex-wrap: wrap; gap: 10px; }
+    .table-title { font-size: 14px; font-weight: 700; }
+    .table-filters { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .search-input { border: 1px solid #ddd; border-radius: 4px; padding: 5px 10px; font-size: 12px; width: 200px; }
+    .search-input:focus { outline: none; border-color: var(--amazon-orange); }
+    .filter-select { border: 1px solid #ddd; border-radius: 4px; padding: 5px 8px; font-size: 12px; }
+    .table-wrap { overflow-x: auto; }
+    table.sqp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .sqp-table thead th { position: sticky; top: 0; background: #f8f8f8; padding: 9px 12px; text-align: left; color: var(--text-secondary); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e8e8e8; white-space: nowrap; cursor: pointer; user-select: none; }
+    .sqp-table thead th:hover { color: var(--text-primary); background: #f0f0f0; }
+    .sqp-table thead th .sort-icon { margin-left: 4px; opacity: 0.4; }
+    .sqp-table thead th.sorted .sort-icon { opacity: 1; color: var(--amazon-orange); }
+    .sqp-table tbody td { padding: 9px 12px; border-bottom: 1px solid #f5f5f5; color: var(--text-primary); vertical-align: middle; }
+    .sqp-table tbody tr:hover { background: #fafafa; }
+    .sqp-table tbody tr:last-child td { border-bottom: none; }
+    .badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+    .badge.star { background: #d6f4ec; color: var(--star); }
+    .badge.opportunity { background: #fdf0e0; color: var(--opportunity); }
+    .badge.niche { background: #dceeff; color: var(--niche); }
+    .badge.poor { background: #f0f0f0; color: var(--poor); }
+    .badge.defend { background: #f0e8f5; color: var(--defend); }
+    .score-bar { display: flex; align-items: center; gap: 6px; }
+    .score-bg { width: 60px; height: 6px; background: #f0f0f0; border-radius: 3px; overflow: hidden; }
+    .score-fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
+    .trend-chip { display: inline-flex; align-items: center; font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 3px; }
+    .trend-chip.up { background: #d6f4ec; color: var(--positive); }
+    .trend-chip.down { background: #fde8eb; color: var(--negative); }
+    .trend-chip.flat { background: #f0f0f0; color: var(--neutral); }
+    .pagination { padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f0f0f0; }
+    .page-info { font-size: 12px; color: var(--text-secondary); }
+    .page-btns { display: flex; gap: 6px; }
+    .page-btn { border: 1px solid #ddd; background: #fff; border-radius: 4px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+    .page-btn.active, .page-btn:hover { background: var(--amazon-orange); color: #fff; border-color: var(--amazon-orange); }
+
+    /* OPPORTUNITY MATRIX */
+    .matrix-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+    .matrix-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-secondary); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    /* WoW SECTION */
+    .wow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-bottom: var(--gap); }
+    .movers-table td, .movers-table th { padding: 8px 12px; }
+    .movers-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .movers-table th { background: #f8f8f8; font-size: 11px; text-transform: uppercase; color: var(--text-secondary); padding: 8px 12px; text-align: left; }
+    .movers-table td { border-bottom: 1px solid #f5f5f5; }
+    .top-mover { color: var(--positive); font-weight: 700; }
+    .bottom-mover { color: var(--negative); font-weight: 700; }
+
+    /* MARKET SHARE */
+    .share-donut-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--gap); margin-bottom: var(--gap); }
+
+    /* EMPTY STATE */
+    .empty-state { text-align: center; padding: 48px 20px; color: var(--text-secondary); }
+    .empty-state .empty-icon { font-size: 48px; margin-bottom: 16px; }
+    .empty-state h3 { font-size: 16px; color: var(--text-primary); margin-bottom: 8px; }
+    .empty-state p { font-size: 13px; max-width: 400px; margin: 0 auto 16px; }
+    .empty-cta { background: var(--amazon-orange); color: #232F3E; border: none; border-radius: 4px; padding: 10px 20px; font-size: 14px; font-weight: 700; cursor: pointer; }
+
+    /* TOOLTIP */
+    .has-tooltip { position: relative; }
+    .has-tooltip .tip { display: none; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 11px; white-space: nowrap; z-index: 200; }
+    .has-tooltip:hover .tip { display: block; }
+
+    /* ALERTS */
+    .alert-row { margin-bottom: var(--gap); }
+    .alert { padding: 10px 14px; border-radius: var(--radius); font-size: 12px; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .alert.warning { background: #fff8e6; border-left: 3px solid var(--amazon-orange); color: #7d4e00; }
+    .alert.info { background: #e8f4fc; border-left: 3px solid #0066C0; color: #00437a; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header { padding: 12px 16px; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .chart-grid-2, .chart-grid-3 { grid-template-columns: 1fr; }
+      .wow-grid { grid-template-columns: 1fr; }
+      .share-donut-row { grid-template-columns: 1fr; }
+      .header-left { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <div class="header-logo">
+      <div class="logo-icon">📊</div>
+      <div>
+        <div class="header-title">SQP Analyzer</div>
+        <div class="header-subtitle">Amazon Search Query Performance</div>
+      </div>
+    </div>
+    <div class="brand-input-wrap">
+      <label>Brand Name:</label>
+      <input class="brand-input" id="brandName" type="text" placeholder="e.g. NutriMax" value="NutriMax" oninput="onBrandChange()">
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="period-tabs">
+      <button class="period-tab active" onclick="setPeriod('weekly',this)">Weekly</button>
+      <button class="period-tab" onclick="setPeriod('monthly',this)">Monthly</button>
+      <button class="period-tab" onclick="setPeriod('quarterly',this)">Quarterly</button>
+    </div>
+    <button class="sample-btn" onclick="loadSampleData()">Load Sample Data</button>
+    <button class="upload-btn" onclick="document.getElementById('csv-file-input').click()">⬆ Upload CSV</button>
+    <input type="file" id="csv-file-input" accept=".csv,.txt" onchange="handleFileUpload(event)">
+  </div>
+</header>
+
+<!-- UPLOAD ZONE -->
+<div class="upload-zone" id="uploadZone">
+  <div class="empty-icon">📂</div>
+  <h3>Upload your Amazon SQP Report</h3>
+  <p>Drag & drop a CSV file, upload it above, or paste your data below.</p>
+  <div class="format-hint">
+    <strong>Expected columns:</strong> Reporting Range, Search Query, Search Query Volume, Impressions - Total, Impressions - Brand, Impressions - Competitor, Click-Throughs - Total, Click-Throughs - Brand, Click-Throughs - Competitor, Cart Adds - Total, Cart Adds - Brand, Purchases - Total, Purchases - Brand
+  </div>
+  <textarea class="csv-paste-area" id="csvPasteArea" placeholder="Paste CSV data here..."></textarea>
+  <br>
+  <button class="paste-btn" onclick="parsePastedCSV()">Analyze Pasted Data</button>
+  <button class="paste-btn" style="background:#565959; margin-left:8px;" onclick="loadSampleData()">Load Demo Data Instead</button>
+</div>
+
+<div class="main" id="mainContent" style="display:none;">
+
+  <!-- DATA INFO BAR -->
+  <div class="data-info">
+    <div class="data-info-left">
+      <span class="data-badge" id="rowCountBadge">0 queries loaded</span>
+      <span style="color:var(--text-secondary); font-size:12px;">Period: <strong id="periodLabel">—</strong></span>
+      <span style="font-size:12px;">Viewing week:
+        <select class="week-selector" id="weekSelector" onchange="onWeekChange()"></select>
+      </span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <label style="font-size:12px; display:flex; align-items:center; gap:5px;">
+        <input type="checkbox" id="compareToggle" onchange="onWeekChange()"> Compare vs. prior week
+      </label>
+      <button class="export-btn" onclick="exportCSV()">⬇ Export CSV</button>
+    </div>
+  </div>
+
+  <!-- ALERTS -->
+  <div class="alert-row" id="alertRow"></div>
+
+  <!-- KPI CARDS -->
+  <div class="kpi-row">
+    <div class="kpi-card orange">
+      <div class="kpi-label has-tooltip">Total Search Volume <span class="tip">Sum of all search query volumes in current view</span></div>
+      <div class="kpi-value" id="kpi-volume">—</div>
+      <div class="kpi-change neu" id="kpi-volume-chg">—</div>
+      <div class="kpi-sub">queries tracked: <span id="kpi-queries">—</span></div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Brand Impression Share</div>
+      <div class="kpi-value" id="kpi-imp-share">—</div>
+      <div class="kpi-change neu" id="kpi-imp-share-chg">—</div>
+      <div class="kpi-sub">of total impressions</div>
+    </div>
+    <div class="kpi-card blue">
+      <div class="kpi-label">Brand Click Share</div>
+      <div class="kpi-value" id="kpi-click-share">—</div>
+      <div class="kpi-change neu" id="kpi-click-share-chg">—</div>
+      <div class="kpi-sub">of total clicks</div>
+    </div>
+    <div class="kpi-card orange">
+      <div class="kpi-label">Brand CTR (avg)</div>
+      <div class="kpi-value" id="kpi-ctr">—</div>
+      <div class="kpi-change neu" id="kpi-ctr-chg">—</div>
+      <div class="kpi-sub">clicks per impression</div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Brand Purchase Rate</div>
+      <div class="kpi-value" id="kpi-conv">—</div>
+      <div class="kpi-change neu" id="kpi-conv-chg">—</div>
+      <div class="kpi-sub">purchases per click</div>
+    </div>
+    <div class="kpi-card purple">
+      <div class="kpi-label">Brand Purchase Share</div>
+      <div class="kpi-value" id="kpi-purch-share">—</div>
+      <div class="kpi-change neu" id="kpi-purch-share-chg">—</div>
+      <div class="kpi-sub">of total purchases</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('overview',this)">📈 Overview</button>
+    <button class="tab-btn" onclick="switchTab('opportunity',this)">🏌 Opportunity Matrix</button>
+    <button class="tab-btn" onclick="switchTab('queries',this)">🔍 Query Analysis</button>
+    <button class="tab-btn" onclick="switchTab('marketshare',this)">🥧 Market Share</button>
+    <button class="tab-btn" onclick="switchTab('trends',this)">📉 Week-over-Week</button>
+  </div>
+
+  <!-- TAB: OVERVIEW -->
+  <div class="tab-content active" id="tab-overview">
+    <div class="chart-grid-2">
+      <!-- FUNNEL CARD -->
+      <div class="chart-card">
+        <div class="chart-title">Brand Conversion Funnel</div>
+        <div class="chart-subtitle">From impressions to purchases for your brand</div>
+        <div class="funnel-container" id="funnelContainer"></div>
+      </div>
+      <!-- TOP QUERIES BY VOLUME -->
+      <div class="chart-card">
+        <div class="chart-title">Top 10 Queries by Search Volume</div>
+        <div class="chart-subtitle">Sorted by total search query volume</div>
+        <div class="chart-wrap"><canvas id="topVolumeChart"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-grid-2">
+      <!-- TOP QUERIES BY BRAND CTR -->
+      <div class="chart-card">
+        <div class="chart-title">Top 10 Queries by Brand CTR</div>
+        <div class="chart-subtitle">Where your brand gets the most clicks per impression</div>
+        <div class="chart-wrap"><canvas id="topCTRChart"></canvas></div>
+      </div>
+      <!-- COMPETITOR vs BRAND SHARE -->
+      <div class="chart-card">
+        <div class="chart-title">Click Share by Entity</div>
+        <div class="chart-subtitle">Brand vs. Competitor vs. Other across all queries</div>
+        <div class="chart-wrap"><canvas id="clickShareChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: OPPORTUNITY MATRIX -->
+  <div class="tab-content" id="tab-opportunity">
+    <div class="chart-card" style="margin-bottom:var(--gap);">
+      <div class="chart-title">Opportunity Matrix — Search Volume vs. Brand CTR</div>
+      <div class="chart-subtitle">Identify where to focus: High volume + Low CTR = biggest growth opportunities</div>
+      <div class="matrix-legend">
+        <div class="matrix-legend-item"><div class="legend-dot" style="background:var(--opportunity)"></div> Opportunity (High Vol, Low CTR)</div>
+        <div class="matrix-legend-item"><div class="legend-dot" style="background:var(--star)"></div> Star (High Vol, High CTR)</div>
+        <div class="matrix-legend-item"><div class="legend-dot" style="background:var(--niche)"></div> Niche (Low Vol, High CTR)</div>
+        <div class="matrix-legend-item"><div class="legend-dot" style="background:var(--poor)"></div> Monitor (Low Vol, Low CTR)</div>
+        <div class="matrix-legend-item"><div class="legend-dot" style="background:var(--defend)"></div> Branded (Defend)</div>
+      </div>
+      <div class="chart-wrap tall"><canvas id="matrixChart"></canvas></div>
+    </div>
+    <div class="table-section">
+      <div class="table-controls">
+        <div class="table-title">Opportunity Scores — All Queries Ranked</div>
+        <input class="search-input" id="oppSearch" type="text" placeholder="Search query..." oninput="renderOpportunityTable()">
+      </div>
+      <div class="table-wrap">
+        <table class="sqp-table" id="oppTable">
+          <thead>
+            <tr>
+              <th onclick="sortOppTable('rank')"># <span class="sort-icon">↕</span></th>
+              <th onclick="sortOppTable('query')">Search Query <span class="sort-icon">↕</span></th>
+              <th onclick="sortOppTable('volume')">Volume <span class="sort-icon">↕</span></th>
+              <th onclick="sortOppTable('brandCTR')">Brand CTR <span class="sort-icon">↕</span></th>
+              <th onclick="sortOppTable('brandPurchRate')">Purchase Rate <span class="sort-icon">↕</span></th>
+              <th onclick="sortOppTable('oppScore')">Opp. Score <span class="sort-icon">↕</span></th>
+              <th>Health</th>
+            </tr>
+          </thead>
+          <tbody id="oppTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: QUERY ANALYSIS -->
+  <div class="tab-content" id="tab-queries">
+    <div class="table-section">
+      <div class="table-controls">
+        <div class="table-title">All Search Queries — Full Detail</div>
+        <div class="table-filters">
+          <input class="search-input" id="querySearch" type="text" placeholder="Filter by query..." oninput="renderQueryTable(1)">
+          <select class="filter-select" id="healthFilter" onchange="renderQueryTable(1)">
+            <option value="all">All Health Types</option>
+            <option value="star">⭐ Star</option>
+            <option value="opportunity">🚀 Opportunity</option>
+            <option value="niche">💎 Niche</option>
+            <option value="poor">⚠ Monitor</option>
+            <option value="defend">🛡 Branded</option>
+          </select>
+          <select class="filter-select" id="minVolumeFilter" onchange="renderQueryTable(1)">
+            <option value="0">All Volumes</option>
+            <option value="10000">Vol > 10K</option>
+            <option value="50000">Vol > 50K</option>
+            <option value="100000">Vol > 100K</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="sqp-table" id="queryTable">
+          <thead>
+            <tr>
+              <th onclick="sortQueryTable('query')">Search Query <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('volume')">Volume <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('brandImpShare')">Brand Imp. Share <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('brandClickShare')">Brand Click Share <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('brandCTR')">Brand CTR <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('brandCartRate')">Cart Rate <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('brandPurchRate')">Purchase Rate <span class="sort-icon">↕</span></th>
+              <th onclick="sortQueryTable('oppScore')">Opp. Score <span class="sort-icon">↕</span></th>
+              <th>Health</th>
+              <th>WoW Trend</th>
+            </tr>
+          </thead>
+          <tbody id="queryTableBody"></tbody>
+        </table>
+      </div>
+      <div class="pagination" id="queryPagination"></div>
+    </div>
+  </div>
+
+  <!-- TAB: MARKET SHARE -->
+  <div class="tab-content" id="tab-marketshare">
+    <div class="share-donut-row">
+      <div class="chart-card">
+        <div class="chart-title">Impression Share</div>
+        <div class="chart-subtitle">Brand vs Competitor vs Other</div>
+        <div class="chart-wrap"><canvas id="impShareChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Click Share</div>
+        <div class="chart-subtitle">Brand vs Competitor vs Other</div>
+        <div class="chart-wrap"><canvas id="clickShare2Chart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Cart Add Share</div>
+        <div class="chart-subtitle">Brand vs Competitor vs Other</div>
+        <div class="chart-wrap"><canvas id="cartShareChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Purchase Share</div>
+        <div class="chart-subtitle">Brand vs Competitor vs Other</div>
+        <div class="chart-wrap"><canvas id="purchShareChart"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Top 10 Queries — Brand vs. Competitor Click Share</div>
+      <div class="chart-subtitle">Stacked bar shows how clicks are split between entities</div>
+      <div class="chart-wrap tall"><canvas id="stackedShareChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- TAB: WoW TRENDS -->
+  <div class="tab-content" id="tab-trends">
+    <div class="chart-grid-2">
+      <div class="chart-card">
+        <div class="chart-title">Brand Impression Share — Weekly Trend</div>
+        <div class="chart-subtitle">How your impression share is moving week over week</div>
+        <div class="chart-wrap"><canvas id="trendImpChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Brand CTR — Weekly Trend</div>
+        <div class="chart-subtitle">Click-through rate trend for your brand</div>
+        <div class="chart-wrap"><canvas id="trendCTRChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Brand Purchase Rate — Weekly Trend</div>
+        <div class="chart-subtitle">Conversion rate trend from click to purchase</div>
+        <div class="chart-wrap"><canvas id="trendConvChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Total Search Volume — Weekly Trend</div>
+        <div class="chart-subtitle">Total market search volume across all tracked queries</div>
+        <div class="chart-wrap"><canvas id="trendVolChart"></canvas></div>
+      </div>
+    </div>
+    <div class="wow-grid">
+      <div class="chart-card">
+        <div class="chart-title" style="margin-bottom:12px;">🚀 Top Gainers (Volume WoW)</div>
+        <table class="movers-table"><thead><tr><th>Query</th><th>Volume</th><th>Change</th></tr></thead><tbody id="gainersBody"></tbody></table>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title" style="margin-bottom:12px;">📉 Top Losers (Volume WoW)</div>
+        <table class="movers-table"><thead><tr><th>Query</th><th>Volume</th><th>Change</th></tr></thead><tbody id="losersBody"></tbody></table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .main -->
+
+<!-- EMPTY STATE (shown before data loads) -->
+<div id="emptyState" style="padding:60px 20px; text-align:center;">
+  <div class="empty-icon">📋</div>
+  <h3 style="font-size:20px; margin-bottom:8px;">Welcome to SQP Analyzer</h3>
+  <p style="color:var(--text-secondary); max-width:450px; margin:0 auto 20px;">Upload your Amazon Search Query Performance report or load sample data to get started.</p>
+  <button class="empty-cta" onclick="loadSampleData()">Load Sample Data</button>
+  <button class="empty-cta" style="background:#37475A; margin-left:10px;" onclick="showUploadZone()">Upload CSV</button>
+</div>
+
+<script>
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   SAMPLE DATA — 20 queries × 4 weeks (NutriMax protein brand)
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+const SAMPLE = [
+  // Week 1
+  {week:"2025-01-06",query:"protein powder",volume:870000,iT:14200,iB:2100,iC:8500,iO:3600,cT:610,cB:102,cC:340,cO:168,aT:95,aB:26,aC:50,aO:19,pT:52,pB:14,pC:28,pO:10},
+  {week:"2025-01-06",query:"whey protein",volume:640000,iT:11800,iB:1200,iC:7100,iO:3500,cT:490,cB:72,cC:288,cO:130,aT:78,aB:16,aC:44,aO:18,pT:42,pB:8,pC:24,pO:10},
+  {week:"2025-01-06",query:"chocolate protein powder",volume:290000,iT:6400,iB:2400,iC:2500,iO:1500,cT:340,cB:155,cC:112,cO:73,aT:62,aB:38,aC:16,aO:8,pT:36,pB:22,pC:9,pO:5},
+  {week:"2025-01-06",query:"best protein powder",volume:480000,iT:9200,iB:950,iC:5800,iO:2450,cT:310,cB:28,cC:210,cO:72,aT:44,aB:6,aC:30,aO:8,pT:24,pB:3,pC:17,pO:4},
+  {week:"2025-01-06",query:"protein powder for weight loss",volume:320000,iT:7100,iB:840,iC:4200,iO:2060,cT:295,cB:32,cC:198,cO:65,aT:48,aB:8,aC:30,aO:10,pT:26,pB:4,pC:17,pO:5},
+  {week:"2025-01-06",query:"vanilla protein powder",volume:210000,iT:5200,iB:1820,iC:2200,iO:1180,cT:260,cB:114,cC:98,cO:48,aT:44,aB:26,aC:13,aO:5,pT:24,pB:14,pC:7,pO:3},
+  {week:"2025-01-06",query:"plant based protein powder",volume:185000,iT:4600,iB:640,iC:2800,iO:1160,cT:195,cB:30,cC:120,cO:45,aT:32,aB:7,aC:19,aO:6,pT:18,pB:4,pC:11,pO:3},
+  {week:"2025-01-06",query:"nutrimax protein",volume:12000,iT:900,iB:870,iC:20,iO:10,cT:290,cB:285,cC:3,cO:2,aT:95,aB:94,aC:1,aO:0,pT:62,pB:61,pC:1,pO:0},
+  {week:"2025-01-06",query:"isolate protein powder",volume:142000,iT:3800,iB:760,iC:2100,iO:940,cT:165,cB:42,cC:94,cO:29,aT:28,aB:9,aC:15,aO:4,pT:16,pB:5,pC:9,pO:2},
+  {week:"2025-01-06",query:"keto protein powder",volume:96000,iT:2900,iB:610,iC:1600,iO:690,cT:128,cB:38,cC:66,cO:24,aT:22,aB:8,aC:11,aO:3,pT:14,pB:5,pC:7,pO:2},
+  {week:"2025-01-06",query:"protein powder for women",volume:390000,iT:8200,iB:780,iC:5200,iO:2220,cT:340,cB:34,cC:224,cO:82,aT:55,aB:7,aC:36,aO:12,pT:30,pB:4,pC:20,pO:6},
+  {week:"2025-01-06",query:"organic protein powder",volume:168000,iT:4100,iB:820,iC:2100,iO:1180,cT:175,cB:46,cC:90,cO:39,aT:30,aB:10,aC:14,aO:6,pT:18,pB:6,pC:9,pO:3},
+  {week:"2025-01-06",query:"sugar free protein powder",volume:122000,iT:3200,iB:800,iC:1600,iO:800,cT:148,cB:48,cC:72,cO:28,aT:26,aB:10,aC:12,aO:4,pT:16,pB:6,pC:8,pO:2},
+  {week:"2025-01-06",query:"protein shake powder",volume:272000,iT:6100,iB:1100,iC:3400,iO:1600,cT:248,cB:58,cC:142,cO:48,aT:40,aB:13,aC:21,aO:6,pT:22,pB:7,pC:12,pO:3},
+  {week:"2025-01-06",query:"high protein powder",volume:88000,iT:2400,iB:480,iC:1300,iO:620,cT:102,cB:28,cC:56,cO:18,aT:18,aB:6,aC:9,aO:3,pT:10,pB:3,pC:5,pO:2},
+  {week:"2025-01-06",query:"protein powder 5lb",volume:74000,iT:2000,iB:840,iC:780,iO:380,cT:118,cB:62,cC:38,cO:18,aT:22,aB:14,aC:6,aO:2,pT:14,pB:9,pC:3,pO:2},
+  {week:"2025-01-06",query:"casein protein powder",volume:62000,iT:1800,iB:360,iC:1050,iO:390,cT:78,cB:22,cC:44,cO:12,aT:14,aB:5,aC:7,aO:2,pT:8,pB:3,pC:4,pO:1},
+  {week:"2025-01-06",query:"unflavored protein powder",volume:54000,iT:1500,iB:450,iC:750,iO:300,cT:72,cB:28,cC:32,cO:12,aT:14,aB:6,aC:6,aO:2,pT:8,pB:4,pC:3,pO:1},
+  {week:"2025-01-06",query:"mass gainer protein",volume:114000,iT:3100,iB:450,iC:1950,iO:700,cT:132,cB:22,cC:88,cO:22,aT:22,aB:4,aC:14,aO:4,pT:12,pB:2,pC:8,pO:2},
+  {week:"2025-01-06",query:"nutrimax whey",volume:8000,iT:640,iB:620,iC:14,iO:6,cT:210,cB:206,cC:3,cO:1,aT:72,aB:71,aC:1,aO:0,pT:48,pB:47,pC:1,pO:0},
+  // Week 2
+  {week:"2025-01-13",query:"protein powder",volume:890000,iT:14600,iB:2250,iC:8650,iO:3700,cT:630,cB:112,cC:348,cO:170,aT:100,aB:29,aC:52,aO:19,pT:55,pB:16,pC:28,pO:11},
+  {week:"2025-01-13",query:"whey protein",volume:658000,iT:12100,iB:1290,iC:7200,iO:3610,cT:510,cB:80,cC:294,cO:136,aT:82,aB:18,aC:46,aO:18,pT:45,pB:10,pC:25,pO:10},
+  {week:"2025-01-13",query:"chocolate protein powder",volume:305000,iT:6600,iB:2530,iC:2530,iO:1540,cT:355,cB:168,cC:115,cO:72,aT:66,aB:41,aC:17,aO:8,pT:38,pB:24,pC:9,pO:5},
+  {week:"2025-01-13",query:"best protein powder",volume:495000,iT:9500,iB:1050,iC:5900,iO:2550,cT:320,cB:34,cC:214,cO:72,aT:48,aB:8,aC:31,aO:9,pT:26,pB:4,pC:17,pO:5},
+  {week:"2025-01-13",query:"protein powder for weight loss",volume:335000,iT:7300,iB:900,iC:4300,iO:2100,cT:310,cB:38,cC:202,cO:70,aT:52,aB:9,aC:32,aO:11,pT:28,pB:5,pC:18,pO:5},
+  {week:"2025-01-13",query:"vanilla protein powder",volume:218000,iT:5350,iB:1900,iC:2230,iO:1220,cT:272,cB:122,cC:100,cO:50,aT:48,aB:28,aC:14,aO:6,pT:26,pB:16,pC:7,pO:3},
+  {week:"2025-01-13",query:"plant based protein powder",volume:192000,iT:4750,iB:680,iC:2870,iO:1200,cT:205,cB:34,cC:125,cO:46,aT:34,aB:8,aC:20,aO:6,pT:20,pB:5,pC:11,pO:4},
+  {week:"2025-01-13",query:"nutrimax protein",volume:13500,iT:950,iB:918,iC:22,iO:10,cT:308,cB:302,cC:4,cO:2,aT:100,aB:99,aC:1,aO:0,pT:66,pB:65,pC:1,pO:0},
+  {week:"2025-01-13",query:"isolate protein powder",volume:148000,iT:3900,iB:800,iC:2150,iO:950,cT:172,cB:46,cC:96,cO:30,aT:30,aB:10,aC:15,aO:5,pT:18,pB:6,pC:9,pO:3},
+  {week:"2025-01-13",query:"keto protein powder",volume:99000,iT:2980,iB:640,iC:1620,iO:720,cT:134,cB:42,cC:68,cO:24,aT:24,aB:9,aC:11,aO:4,pT:15,pB:6,pC:7,pO:2},
+  {week:"2025-01-13",query:"protein powder for women",volume:402000,iT:8400,iB:840,iC:5300,iO:2260,cT:352,cB:38,cC:228,cO:86,aT:58,aB:8,aC:37,aO:13,pT:32,pB:5,pC:21,pO:6},
+  {week:"2025-01-13",query:"organic protein powder",volume:172000,iT:4200,iB:860,iC:2140,iO:1200,cT:182,cB:50,cC:92,cO:40,aT:32,aB:11,aC:15,aO:6,pT:19,pB:7,pC:9,pO:3},
+  {week:"2025-01-13",query:"sugar free protein powder",volume:126000,iT:3300,iB:840,iC:1640,iO:820,cT:155,cB:52,cC:74,cO:29,aT:28,aB:11,aC:13,aO:4,pT:17,pB:7,pC:8,pO:2},
+  {week:"2025-01-13",query:"protein shake powder",volume:280000,iT:6250,iB:1150,iC:3480,iO:1620,cT:258,cB:64,cC:145,cO:49,aT:42,aB:14,aC:22,aO:6,pT:24,pB:8,pC:12,pO:4},
+  {week:"2025-01-13",query:"high protein powder",volume:92000,iT:2480,iB:510,iC:1330,iO:640,cT:108,cB:32,cC:58,cO:18,aT:19,aB:7,aC:9,aO:3,pT:11,pB:4,pC:5,pO:2},
+  {week:"2025-01-13",query:"protein powder 5lb",volume:76000,iT:2050,iB:870,iC:795,iO:385,cT:124,cB:68,cC:38,cO:18,aT:24,aB:15,aC:7,aO:2,pT:15,pB:10,pC:3,pO:2},
+  {week:"2025-01-13",query:"casein protein powder",volume:64000,iT:1850,iB:380,iC:1080,iO:390,cT:82,cB:24,cC:46,cO:12,aT:15,aB:6,aC:7,aO:2,pT:9,pB:4,pC:4,pO:1},
+  {week:"2025-01-13",query:"unflavored protein powder",volume:56000,iT:1550,iB:480,iC:760,iO:310,cT:76,cB:30,cC:34,cO:12,aT:15,aB:7,aC:6,aO:2,pT:9,pB:5,pC:3,pO:1},
+  {week:"2025-01-13",query:"mass gainer protein",volume:118000,iT:3200,iB:480,iC:2000,iO:720,cT:138,cB:24,cC:92,cO:22,aT:24,aB:5,aC:15,aO:4,pT:13,pB:3,pC:8,pO:2},
+  {week:"2025-01-13",query:"nutrimax whey",volume:8800,iT:660,iB:640,iC:14,iO:6,cT:218,cB:214,cC:3,cO:1,aT:76,aB:75,aC:1,aO:0,pT:50,pB:49,pC:1,pO:0},
+  // Week 3
+  {week:"2025-01-20",query:"protein powder",volume:920000,iT:15000,iB:2400,iC:8800,iO:3800,cT:655,cB:122,cC:360,cO:173,aT:104,aB:31,aC:54,aO:19,pT:58,pB:17,pC:30,pO:11},
+  {week:"2025-01-20",query:"whey protein",volume:672000,iT:12400,iB:1380,iC:7250,iO:3770,cT:525,cB:86,cC:300,cO:139,aT:86,aB:20,aC:47,aO:19,pT:47,pB:11,pC:26,pO:10},
+  {week:"2025-01-20",query:"chocolate protein powder",volume:318000,iT:6800,iB:2680,iC:2560,iO:1560,cT:368,cB:178,cC:118,cO:72,aT:68,aB:43,aC:17,aO:8,pT:40,pB:25,pC:10,pO:5},
+  {week:"2025-01-20",query:"best protein powder",volume:510000,iT:9800,iB:1150,iC:6000,iO:2650,cT:335,cB:40,cC:218,cO:77,aT:52,aB:9,aC:32,aO:11,pT:28,pB:5,pC:18,pO:5},
+  {week:"2025-01-20",query:"protein powder for weight loss",volume:348000,iT:7500,iB:980,iC:4400,iO:2120,cT:324,cB:44,cC:206,cO:74,aT:55,aB:10,aC:33,aO:12,pT:30,pB:6,pC:18,pO:6},
+  {week:"2025-01-20",query:"vanilla protein powder",volume:225000,iT:5500,iB:1980,iC:2260,iO:1260,cT:284,cB:130,cC:104,cO:50,aT:50,aB:30,aC:14,aO:6,pT:28,pB:17,pC:7,pO:4},
+  {week:"2025-01-20",query:"plant based protein powder",volume:204000,iT:4900,iB:720,iC:2940,iO:1240,cT:218,cB:38,cC:132,cO:48,aT:36,aB:9,aC:21,aO:6,pT:22,pB:5,pC:12,pO:5},
+  {week:"2025-01-20",query:"nutrimax protein",volume:14200,iT:990,iB:960,iC:20,iO:10,cT:320,cB:314,cC:4,cO:2,aT:104,aB:103,aC:1,aO:0,pT:70,pB:69,pC:1,pO:0},
+  {week:"2025-01-20",query:"isolate protein powder",volume:155000,iT:4000,iB:840,iC:2200,iO:960,cT:178,cB:50,cC:98,cO:30,aT:32,aB:11,aC:16,aO:5,pT:19,pB:6,pC:10,pO:3},
+  {week:"2025-01-20",query:"keto protein powder",volume:105000,iT:3050,iB:680,iC:1650,iO:720,cT:140,cB:46,cC:70,cO:24,aT:25,aB:10,aC:11,aO:4,pT:16,pB:7,pC:7,pO:2},
+  {week:"2025-01-20",query:"protein powder for women",volume:415000,iT:8600,iB:900,iC:5400,iO:2300,cT:362,cB:42,cC:232,cO:88,aT:60,aB:9,aC:38,aO:13,pT:34,pB:5,pC:22,pO:7},
+  {week:"2025-01-20",query:"organic protein powder",volume:178000,iT:4350,iB:900,iC:2200,iO:1250,cT:190,cB:54,cC:94,cO:42,aT:34,aB:12,aC:15,aO:7,pT:21,pB:8,pC:9,pO:4},
+  {week:"2025-01-20",query:"sugar free protein powder",volume:131000,iT:3400,iB:880,iC:1680,iO:840,cT:162,cB:56,cC:76,cO:30,aT:30,aB:12,aC:13,aO:5,pT:18,pB:8,pC:8,pO:2},
+  {week:"2025-01-20",query:"protein shake powder",volume:288000,iT:6400,iB:1200,iC:3540,iO:1660,cT:268,cB:70,cC:148,cO:50,aT:44,aB:15,aC:23,aO:6,pT:26,pB:9,pC:13,pO:4},
+  {week:"2025-01-20",query:"high protein powder",volume:95000,iT:2550,iB:540,iC:1360,iO:650,cT:112,cB:34,cC:60,cO:18,aT:20,aB:7,aC:10,aO:3,pT:12,pB:4,pC:6,pO:2},
+  {week:"2025-01-20",query:"protein powder 5lb",volume:79000,iT:2100,iB:900,iC:810,iO:390,cT:130,cB:74,cC:38,cO:18,aT:25,aB:16,aC:7,aO:2,pT:16,pB:11,pC:3,pO:2},
+  {week:"2025-01-20",query:"casein protein powder",volume:66000,iT:1900,iB:400,iC:1100,iO:400,cT:86,cB:26,cC:48,cO:12,aT:16,aB:6,aC:8,aO:2,pT:10,pB:4,pC:4,pO:2},
+  {week:"2025-01-20",query:"unflavored protein powder",volume:58000,iT:1600,iB:510,iC:770,iO:320,cT:80,cB:32,cC:36,cO:12,aT:16,aB:8,aC:6,aO:2,pT:10,pB:6,pC:3,pO:1},
+  {week:"2025-01-20",query:"mass gainer protein",volume:122000,iT:3300,iB:510,iC:2050,iO:740,cT:142,cB:26,cC:94,cO:22,aT:26,aB:6,aC:16,aO:4,pT:14,pB:3,pC:9,pO:2},
+  {week:"2025-01-20",query:"nutrimax whey",volume:9200,iT:680,iB:660,iC:14,iO:6,cT:226,cB:222,cC:3,cO:1,aT:80,aB:79,aC:1,aO:0,pT:52,pB:51,pC:1,pO:0},
+  // Week 4
+  {week:"2025-01-27",query:"protein powder",volume:945000,iT:15400,iB:2550,iC:8950,iO:3900,cT:672,cB:132,cC:366,cO:174,aT:108,aB:33,aC:56,aO:19,pT:60,pB:18,pC:31,pO:11},
+  {week:"2025-01-27",query:"whey protein",volume:685000,iT:12700,iB:1450,iC:7350,iO:3900,cT:538,cB:92,cC:306,cO:140,aT:90,aB:22,aC:49,aO:19,pT:49,pB:12,pC:27,pO:10},
+  {week:"2025-01-27",query:"chocolate protein powder",volume:328000,iT:7000,iB:2800,iC:2580,iO:1620,cT:378,cB:188,cC:118,cO:72,aT:70,aB:45,aC:17,aO:8,pT:42,pB:27,pC:10,pO:5},
+  {week:"2025-01-27",query:"best protein powder",volume:528000,iT:10100,iB:1250,iC:6100,iO:2750,cT:348,cB:46,cC:224,cO:78,aT:56,aB:10,aC:33,aO:13,pT:30,pB:6,pC:18,pO:6},
+  {week:"2025-01-27",query:"protein powder for weight loss",volume:360000,iT:7700,iB:1050,iC:4500,iO:2150,cT:336,cB:50,cC:212,cO:74,aT:58,aB:11,aC:35,aO:12,pT:32,pB:7,pC:19,pO:6},
+  {week:"2025-01-27",query:"vanilla protein powder",volume:232000,iT:5650,iB:2050,iC:2290,iO:1310,cT:294,cB:138,cC:106,cO:50,aT:52,aB:32,aC:14,aO:6,pT:30,pB:18,pC:8,pO:4},
+  {week:"2025-01-27",query:"plant based protein powder",volume:215000,iT:5050,iB:760,iC:3000,iO:1290,cT:228,cB:42,cC:138,cO:48,aT:38,aB:10,aC:22,aO:6,pT:24,pB:6,pC:13,pO:5},
+  {week:"2025-01-27",query:"nutrimax protein",volume:15000,iT:1020,iB:990,iC:20,iO:10,cT:330,cB:324,cC:4,cO:2,aT:108,aB:107,aC:1,aO:0,pT:72,pB:71,pC:1,pO:0},
+  {week:"2025-01-27",query:"isolate protein powder",volume:161000,iT:4100,iB:880,iC:2250,iO:970,cT:184,cB:54,cC:100,cO:30,aT:33,aB:12,aC:16,aO:5,pT:20,pB:7,pC:10,pO:3},
+  {week:"2025-01-27",query:"keto protein powder",volume:110000,iT:3120,iB:720,iC:1680,iO:720,cT:146,cB:50,cC:72,cO:24,aT:26,aB:10,aC:12,aO:4,pT:17,pB:7,pC:8,pO:2},
+  {week:"2025-01-27",query:"protein powder for women",volume:428000,iT:8800,iB:960,iC:5500,iO:2340,cT:370,cB:46,cC:236,cO:88,aT:62,aB:10,aC:39,aO:13,pT:36,pB:6,pC:23,pO:7},
+  {week:"2025-01-27",query:"organic protein powder",volume:183000,iT:4480,iB:940,iC:2250,iO:1290,cT:198,cB:58,cC:96,cO:44,aT:36,aB:13,aC:16,aO:7,pT:22,pB:9,pC:10,pO:3},
+  {week:"2025-01-27",query:"sugar free protein powder",volume:136000,iT:3500,iB:920,iC:1720,iO:860,cT:168,cB:60,cC:78,cO:30,aT:32,aB:13,aC:14,aO:5,pT:20,pB:9,pC:9,pO:2},
+  {week:"2025-01-27",query:"protein shake powder",volume:295000,iT:6550,iB:1260,iC:3600,iO:1690,cT:276,cB:76,cC:150,cO:50,aT:46,aB:16,aC:24,aO:6,pT:28,pB:10,pC:13,pO:5},
+  {week:"2025-01-27",query:"high protein powder",volume:98000,iT:2620,iB:570,iC:1390,iO:660,cT:116,cB:36,cC:62,cO:18,aT:21,aB:8,aC:10,aO:3,pT:13,pB:5,pC:6,pO:2},
+  {week:"2025-01-27",query:"protein powder 5lb",volume:82000,iT:2150,iB:930,iC:820,iO:400,cT:136,cB:80,cC:38,cO:18,aT:27,aB:17,aC:8,aO:2,pT:18,pB:12,pC:4,pO:2},
+  {week:"2025-01-27",query:"casein protein powder",volume:69000,iT:1950,iB:420,iC:1130,iO:400,cT:90,cB:28,cC:50,cO:12,aT:17,aB:7,aC:8,aO:2,pT:11,pB:4,pC:5,pO:2},
+  {week:"2025-01-27",query:"unflavored protein powder",volume:61000,iT:1650,iB:540,iC:780,iO:330,cT:84,cB:34,cC:38,cO:12,aT:17,aB:9,aC:6,aO:2,pT:11,pB:7,pC:3,pO:1},
+  {week:"2025-01-27",query:"mass gainer protein",volume:126000,iT:3400,iB:540,iC:2100,iO:760,cT:148,cB:28,cC:98,cO:22,aT:28,aB:7,aC:17,aO:4,pT:16,pB:4,pC:9,pO:3},
+  {week:"2025-01-27",query:"nutrimax whey",volume:9600,iT:700,iB:680,iC:14,iO:6,cT:234,cB:230,cC:3,cO:1,aT:82,aB:81,aC:1,aO:0,pT:55,pB:54,pC:1,pO:0},
+];
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   STATE
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+let allData = [];
+let weeks = [];
+let currentWeekIdx = 0;
+let currentPeriod = 'weekly';
+let brandName = 'NutriMax';
+let charts = {};
+let queryTablePage = 1;
+const PAGE_SIZE = 25;
+let queryTableSort = { col: 'volume', dir: 'desc' };
+let oppTableSort = { col: 'oppScore', dir: 'desc' };
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   UTILITIES
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+const fmt = {
+  num: v => v >= 1e6 ? (v/1e6).toFixed(1)+'M' : v >= 1e3 ? (v/1e3).toFixed(0)+'K' : Math.round(v).toLocaleString(),
+  pct: v => (v*100).toFixed(1)+'%',
+  pct1: v => v.toFixed(1)+'%',
+};
+
+function delta(curr, prev) {
+  if (!prev || prev === 0) return null;
+  return ((curr - prev) / prev) * 100;
+}
+
+function chgHtml(pct, suffix='') {
+  if (pct === null) return '<span class="kpi-change neu">—</span>';
+  const sign = pct >= 0 ? '+' : '';
+  const cls = pct >= 0 ? 'pos' : 'neg';
+  return `<span class="kpi-change ${cls}">${sign}${pct.toFixed(1)}% vs prior week</span>`;
+}
+
+function scoreColor(s) {
+  if (s >= 70) return '#CC0C39';
+  if (s >= 50) return '#E37400';
+  if (s >= 30) return '#0066C0';
+  return '#8D9096';
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   BRAND DETECTION
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function isBrandedQuery(q) {
+  const bn = brandName.toLowerCase().replace(/\s+/g,'');
+  return q.toLowerCase().replace(/\s+/g,'').includes(bn);
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   METRICS COMPUTATION
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function computeMetrics(rows) {
+  return rows.map(r => {
+    const brandCTR = r.iB > 0 ? r.cB / r.iB : 0;
+    const brandCartRate = r.cB > 0 ? r.aB / r.cB : 0;
+    const brandPurchRate = r.cB > 0 ? r.pB / r.cB : 0;
+    const brandImpShare = r.iT > 0 ? r.iB / r.iT : 0;
+    const brandClickShare = r.cT > 0 ? r.cB / r.cT : 0;
+    const brandPurchShare = r.pT > 0 ? r.pB / r.pT : 0;
+    return { ...r, brandCTR, brandCartRate, brandPurchRate, brandImpShare, brandClickShare, brandPurchShare };
+  });
+}
+
+function computeOpportunityScore(rows) {
+  const vols = rows.map(r => r.volume);
+  const ctrs = rows.map(r => r.brandCTR);
+  const maxVol = Math.max(...vols);
+  const maxCTR = Math.max(...ctrs);
+  return rows.map(r => {
+    const volPct = maxVol > 0 ? r.volume / maxVol : 0;
+    const ctrInverse = maxCTR > 0 ? 1 - (r.brandCTR / maxCTR) : 1;
+    const purchScore = Math.min(r.brandPurchRate * 10, 1);
+    const oppScore = Math.round((volPct * 45) + (ctrInverse * 45) + (purchScore * 10));
+    return { ...r, oppScore };
+  });
+}
+
+function getHealthBadge(r, medVol, medCTR) {
+  if (isBrandedQuery(r.query)) return { cls:'defend', label:'🛡 Branded' };
+  const hiVol = r.volume >= medVol;
+  const hiCTR = r.brandCTR >= medCTR;
+  if (hiVol && hiCTR) return { cls:'star', label:'⭐ Star' };
+  if (hiVol && !hiCTR) return { cls:'opportunity', label:'🚀 Opportunity' };
+  if (!hiVol && hiCTR) return { cls:'niche', label:'💎 Niche' };
+  return { cls:'poor', label:'⚠ Monitor' };
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   DATA LOADING
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function loadSampleData() {
+  allData = computeMetrics(SAMPLE);
+  weeks = [...new Set(allData.map(r => r.week))].sort();
+  currentWeekIdx = weeks.length - 1;
+  initDashboard();
+}
+
+function showUploadZone() {
+  document.getElementById('uploadZone').classList.add('visible');
+  document.getElementById('emptyState').style.display = 'none';
+}
+
+function handleFileUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => parseCSVString(ev.target.result);
+  reader.readAsText(file);
+}
+
+function parsePastedCSV() {
+  const txt = document.getElementById('csvPasteArea').value.trim();
+  if (!txt) return alert('Please paste CSV data first.');
+  parseCSVString(txt);
+}
+
+function parseCSVString(text) {
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return alert('CSV must have at least a header row and one data row.');
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g,'').toLowerCase());
+
+  const colMap = {
+    week: findCol(headers,['reporting range','week','date','reporting_range']),
+    query: findCol(headers,['search query','search_query','query']),
+    volume: findCol(headers,['search query volume','search_query_volume','volume']),
+    iT: findCol(headers,['impressions - total','impressions_-_total','impressions total']),
+    iB: findCol(headers,['impressions - brand','impressions_-_brand','impressions brand']),
+    iC: findCol(headers,['impressions - competitor','impressions_-_competitor']),
+    iO: findCol(headers,['impressions - other','impressions_-_other asins']),
+    cT: findCol(headers,['click-throughs - total','click-throughs_-_total','clicks total']),
+    cB: findCol(headers,['click-throughs - brand','click-throughs_-_brand','clicks brand']),
+    cC: findCol(headers,['click-throughs - competitor','click-throughs_-_competitor']),
+    cO: findCol(headers,['click-throughs - other','click-throughs_-_other asins']),
+    aT: findCol(headers,['cart adds - total','cart_adds_-_total','cart adds total']),
+    aB: findCol(headers,['cart adds - brand','cart_adds_-_brand']),
+    aC: findCol(headers,['cart adds - competitor','cart_adds_-_competitor']),
+    aO: findCol(headers,['cart adds - other','cart_adds_-_other asins']),
+    pT: findCol(headers,['purchases - total','purchases_-_total','purchases total']),
+    pB: findCol(headers,['purchases - brand','purchases_-_brand']),
+    pC: findCol(headers,['purchases - competitor','purchases_-_competitor']),
+    pO: findCol(headers,['purchases - other','purchases_-_other asins']),
+  };
+
+  const parsed = [];
+  for (let i = 1; i < lines.length; i++) {
+    const vals = parseCSVLine(lines[i]);
+    if (vals.length < 3) continue;
+    const row = {};
+    for (const [k,idx] of Object.entries(colMap)) {
+      if (idx === -1) { row[k] = k==='query'?'Unknown':'0'; continue; }
+      row[k] = vals[idx]?.replace(/^"|"$/g,'').trim() || '0';
+    }
+    parsed.push({
+      week: row.week,
+      query: row.query,
+      volume: parseNum(row.volume),
+      iT: parseNum(row.iT), iB: parseNum(row.iB), iC: parseNum(row.iC), iO: parseNum(row.iO),
+      cT: parseNum(row.cT), cB: parseNum(row.cB), cC: parseNum(row.cC), cO: parseNum(row.cO),
+      aT: parseNum(row.aT), aB: parseNum(row.aB), aC: parseNum(row.aC), aO: parseNum(row.aO),
+      pT: parseNum(row.pT), pB: parseNum(row.pB), pC: parseNum(row.pC), pO: parseNum(row.pO),
+    });
+  }
+
+  if (parsed.length === 0) return alert('Could not parse data. Please check the column names match the expected format.');
+  allData = computeMetrics(parsed);
+  weeks = [...new Set(allData.map(r => r.week))].sort();
+  currentWeekIdx = weeks.length - 1;
+  document.getElementById('uploadZone').classList.remove('visible');
+  initDashboard();
+}
+
+function findCol(headers, aliases) {
+  for (const a of aliases) {
+    const idx = headers.findIndex(h => h.includes(a));
+    if (idx !== -1) return idx;
+  }
+  return -1;
+}
+
+function parseCSVLine(line) {
+  const result = []; let cur = ''; let inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] === '"') { inQ = !inQ; }
+    else if (line[i] === ',' && !inQ) { result.push(cur); cur = ''; }
+    else { cur += line[i]; }
+  }
+  result.push(cur);
+  return result;
+}
+
+function parseNum(v) {
+  if (!v) return 0;
+  return parseInt(v.replace(/[^0-9.-]/g,'')) || 0;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   DASHBOARD INIT
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function initDashboard() {
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('uploadZone').classList.remove('visible');
+  document.getElementById('mainContent').style.display = 'block';
+
+  // Populate week selector
+  const sel = document.getElementById('weekSelector');
+  sel.innerHTML = weeks.map((w,i) => `<option value="${i}" ${i===currentWeekIdx?'selected':''}>${w}</option>`).join('');
+
+  updateDashboard();
+}
+
+function onWeekChange() {
+  currentWeekIdx = parseInt(document.getElementById('weekSelector').value);
+  updateDashboard();
+}
+
+function onBrandChange() {
+  brandName = document.getElementById('brandName').value || 'Brand';
+  if (allData.length) updateDashboard();
+}
+
+function setPeriod(p, btn) {
+  currentPeriod = p;
+  document.querySelectorAll('.period-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function updateDashboard() {
+  const curWeek = weeks[currentWeekIdx];
+  const prevWeek = currentWeekIdx > 0 ? weeks[currentWeekIdx - 1] : null;
+  const curRows = computeOpportunityScore(computeMetrics(allData.filter(r => r.week === curWeek)));
+  const prevRows = prevWeek ? computeMetrics(allData.filter(r => r.week === prevWeek)) : [];
+
+  // Medians for health badges
+  const sortedVols = [...curRows.map(r=>r.volume)].sort((a,b)=>a-b);
+  const sortedCTRs = [...curRows.map(r=>r.brandCTR)].sort((a,b)=>a-b);
+  const medVol = sortedVols[Math.floor(sortedVols.length/2)] || 0;
+  const medCTR = sortedCTRs[Math.floor(sortedCTRs.length/2)] || 0;
+  curRows.forEach(r => r.health = getHealthBadge(r, medVol, medCTR));
+
+  // Match prev rows
+  const prevMap = {};
+  prevRows.forEach(r => prevMap[r.query] = r);
+  curRows.forEach(r => r.prev = prevMap[r.query] || null);
+
+  // Info bar
+  document.getElementById('rowCountBadge').textContent = `${curRows.length} queries loaded`;
+  document.getElementById('periodLabel').textContent = curWeek;
+
+  renderKPIs(curRows, prevRows);
+  renderAlerts(curRows);
+  renderOverviewCharts(curRows);
+  renderOpportunityMatrix(curRows);
+  renderOpportunityTable();
+  renderQueryTable(1);
+  renderMarketShareCharts(curRows);
+  renderTrendsCharts();
+  renderMovers(curRows, prevRows);
+
+  window._curRows = curRows;
+  window._medVol = medVol;
+  window._medCTR = medCTR;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   KPIs
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderKPIs(cur, prev) {
+  const totalVol = cur.reduce((s,r)=>s+r.volume,0);
+  const totalImpT = cur.reduce((s,r)=>s+r.iT,0), totalImpB = cur.reduce((s,r)=>s+r.iB,0);
+  const totalClkT = cur.reduce((s,r)=>s+r.cT,0), totalClkB = cur.reduce((s,r)=>s+r.cB,0);
+  const totalPurT = cur.reduce((s,r)=>s+r.pT,0), totalPurB = cur.reduce((s,r)=>s+r.pB,0);
+  const impShare = totalImpT>0?totalImpB/totalImpT:0;
+  const clkShare = totalClkT>0?totalClkB/totalClkT:0;
+  const purShare = totalPurT>0?totalPurB/totalPurT:0;
+  const brandCTR = totalImpB>0?totalClkB/totalImpB:0;
+  const brandConv = totalClkB>0?totalPurB/totalClkB:0;
+
+  document.getElementById('kpi-volume').textContent = fmt.num(totalVol);
+  document.getElementById('kpi-queries').textContent = cur.length;
+  document.getElementById('kpi-imp-share').textContent = fmt.pct(impShare);
+  document.getElementById('kpi-click-share').textContent = fmt.pct(clkShare);
+  document.getElementById('kpi-ctr').textContent = fmt.pct(brandCTR);
+  document.getElementById('kpi-conv').textContent = fmt.pct(brandConv);
+  document.getElementById('kpi-purch-share').textContent = fmt.pct(purShare);
+
+  if (prev.length) {
+    const pVol = prev.reduce((s,r)=>s+r.volume,0);
+    const pIT = prev.reduce((s,r)=>s+r.iT,0), pIB = prev.reduce((s,r)=>s+r.iB,0);
+    const pCT = prev.reduce((s,r)=>s+r.cT,0), pCB = prev.reduce((s,r)=>s+r.cB,0);
+    const pPT = prev.reduce((s,r)=>s+r.pT,0), pPB = prev.reduce((s,r)=>s+r.pB,0);
+    document.getElementById('kpi-volume-chg').innerHTML = chgHtml(delta(totalVol,pVol));
+    document.getElementById('kpi-imp-share-chg').innerHTML = chgHtml(delta(impShare, pIT>0?pIB/pIT:0)*100,'pp');
+    document.getElementById('kpi-click-share-chg').innerHTML = chgHtml(delta(clkShare, pCT>0?pCB/pCT:0)*100,'pp');
+    document.getElementById('kpi-ctr-chg').innerHTML = chgHtml(delta(brandCTR, pIB>0?pCB/pIB:0)*100,'pp');
+    document.getElementById('kpi-conv-chg').innerHTML = chgHtml(delta(brandConv, pCB>0?pPB/pCB:0)*100,'pp');
+    document.getElementById('kpi-purch-share-chg').innerHTML = chgHtml(delta(purShare, pPT>0?pPB/pPT:0)*100,'pp');
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   ALERTS
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderAlerts(rows) {
+  const alerts = [];
+  const opportunities = rows.filter(r => r.health && r.health.cls === 'opportunity').slice(0,3);
+  if (opportunities.length) {
+    alerts.push(`<div class="alert warning">🏌 <strong>${opportunities.length} high-opportunity queries detected</strong> with high search volume but low brand CTR: ${opportunities.map(r=>`\"${r.query}\"`).join(', ')}. Consider optimizing listings or ads.</div>`);
+  }
+  const lostShare = rows.filter(r => r.brandImpShare < 0.05 && r.volume > 100000);
+  if (lostShare.length) {
+    alerts.push(`<div class="alert info">📊 <strong>${lostShare.length} high-volume queries</strong> where your brand has < 5% impression share — potential whitespace to explore.</div>`);
+  }
+  document.getElementById('alertRow').innerHTML = alerts.join('');
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   OVERVIEW CHARTS
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+
+function renderOverviewCharts(rows) {
+  // FUNNEL
+  const totImp = rows.reduce((s,r)=>s+r.iB,0);
+  const totClk = rows.reduce((s,r)=>s+r.cB,0);
+  const totCart = rows.reduce((s,r)=>s+r.aB,0);
+  const totPur = rows.reduce((s,r)=>s+r.pB,0);
+  const steps = [
+    {label:'Impressions', val:totImp, color:'#37475A'},
+    {label:'Clicks', val:totClk, color:'#FF9900'},
+    {label:'Cart Adds', val:totCart, color:'#067D62'},
+    {label:'Purchases', val:totPur, color:'#CC0C39'},
+  ];
+  const maxVal = totImp || 1;
+  let fHtml = '';
+  steps.forEach((s,i) => {
+    const w = Math.max((s.val/maxVal)*100,4);
+    const rate = i>0 ? ` → ${(s.val/steps[i-1].val*100).toFixed(0)}%` : '';
+    fHtml += `<div class="funnel-step">
+      <div class="funnel-label">${s.label}</div>
+      <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:${w}%; background:${s.color};">${fmt.num(s.val)}</div></div>
+      <div class="funnel-rate">${rate}</div>
+    </div>`;
+    if (i < steps.length-1) fHtml += `<div class="funnel-arrow" style="align-self:center; margin:-2px 0;">▼</div>`;
+  });
+  document.getElementById('funnelContainer').innerHTML = fHtml;
+
+  // TOP VOLUME
+  const top10vol = [...rows].sort((a,b)=>b.volume-a.volume).slice(0,10);
+  destroyChart('topVolumeChart');
+  charts.topVolumeChart = new Chart(document.getElementById('topVolumeChart').getContext('2d'), {
+    type:'bar',
+    data: { labels: top10vol.map(r=>r.query.length>22?r.query.slice(0,22)+'…':r.query), datasets:[{
+      data: top10vol.map(r=>r.volume),
+      backgroundColor: '#37475A', borderRadius:3, label:'Search Volume'
+    }]},
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:false,
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+fmt.num(c.parsed.x)}}},
+      scales:{ x:{beginAtZero:true, ticks:{callback:v=>fmt.num(v)}, grid:{display:false}}, y:{grid:{display:false}, ticks:{font:{size:11}}}}
+    }
+  });
+
+  // TOP CTR
+  const top10ctr = [...rows].filter(r=>r.iB>100).sort((a,b)=>b.brandCTR-a.brandCTR).slice(0,10);
+  destroyChart('topCTRChart');
+  charts.topCTRChart = new Chart(document.getElementById('topCTRChart').getContext('2d'), {
+    type:'bar',
+    data: { labels: top10ctr.map(r=>r.query.length>22?r.query.slice(0,22)+'…':r.query), datasets:[{
+      data: top10ctr.map(r=>+(r.brandCTR*100).toFixed(2)),
+      backgroundColor: '#FF9900', borderRadius:3, label:'Brand CTR %'
+    }]},
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:false,
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+c.parsed.x.toFixed(2)+'%'}}},
+      scales:{ x:{beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{display:false}}, y:{grid:{display:false}, ticks:{font:{size:11}}}}
+    }
+  });
+
+  // CLICK SHARE DOUGHNUT
+  const cT = rows.reduce((s,r)=>s+r.cT,0);
+  const cB = rows.reduce((s,r)=>s+r.cB,0);
+  const cC = rows.reduce((s,r)=>s+r.cC,0);
+  const cO = Math.max(cT-cB-cC,0);
+  destroyChart('clickShareChart');
+  charts.clickShareChart = new Chart(document.getElementById('clickShareChart').getContext('2d'), {
+    type:'doughnut',
+    data: { labels:['Brand','Competitor','Other'], datasets:[{ data:[cB,cC,cO], backgroundColor:['#067D62','#CC0C39','#8D9096'], borderWidth:2, borderColor:'#fff' }]},
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'60%', animation:false,
+      plugins:{ legend:{position:'right', labels:{font:{size:11}, usePointStyle:true}},
+        tooltip:{callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0); return `${c.label}: ${fmt.num(c.parsed)} (${(c.parsed/t*100).toFixed(1)}%)`;}}}}
+    }
+  });
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   OPPORTUNITY MATRIX
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderOpportunityMatrix(rows) {
+  const medVol = window._medVol || 0;
+  const medCTR = window._medCTR || 0;
+
+  const colorMap = { star:'rgba(6,125,98,0.8)', opportunity:'rgba(227,116,0,0.8)', niche:'rgba(0,102,192,0.8)', poor:'rgba(141,144,150,0.8)', defend:'rgba(123,45,139,0.8)' };
+
+  const datasets = ['star','opportunity','niche','poor','defend'].map(type => ({
+    label: type === 'star' ? '⭐ Star' : type === 'opportunity' ? '🚀 Opportunity' : type === 'niche' ? '💎 Niche' : type === 'poor' ? '⚠ Monitor' : '🛡 Branded',
+    data: rows.filter(r=>r.health && r.health.cls===type).map(r=>({x:r.volume, y:+(r.brandCTR*100).toFixed(3), r: Math.max(Math.min(r.oppScore/10, 12), 4), label:r.query})),
+    backgroundColor: colorMap[type],
+    borderColor: colorMap[type].replace('0.8','1'),
+    borderWidth: 1,
+  }));
+
+  destroyChart('matrixChart');
+  charts.matrixChart = new Chart(document.getElementById('matrixChart').getContext('2d'), {
+    type:'bubble',
+    data: { datasets },
+    options: { responsive:true, maintainAspectRatio:false, animation:false,
+      plugins:{
+        legend:{position:'top', labels:{usePointStyle:true, font:{size:11}}},
+        tooltip:{callbacks:{label:c=>{const p=c.raw; return [`\"${p.label}\"`,`Volume: ${fmt.num(p.x)}`,`Brand CTR: ${p.y.toFixed(2)}%`];}}}
+      },
+      scales:{
+        x:{title:{display:true,text:'Search Volume',font:{size:12}}, ticks:{callback:v=>fmt.num(v)}, grid:{display:true}},
+        y:{title:{display:true,text:'Brand CTR (%)',font:{size:12}}, ticks:{callback:v=>v+'%'}, grid:{display:true}},
+      }
+    }
+  });
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   OPPORTUNITY TABLE
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderOpportunityTable() {
+  const rows = window._curRows || [];
+  const search = document.getElementById('oppSearch')?.value?.toLowerCase() || '';
+  let filtered = rows.filter(r => !search || r.query.toLowerCase().includes(search));
+  const col = oppTableSort.col, dir = oppTableSort.dir;
+  filtered.sort((a,b) => { const v = a[col]>b[col]?1:a[col]<b[col]?-1:0; return dir==='asc'?v:-v; });
+
+  const tbody = document.getElementById('oppTableBody');
+  tbody.innerHTML = filtered.map((r,i) => `<tr>
+    <td>${i+1}</td>
+    <td><strong>${r.query}</strong></td>
+    <td>${fmt.num(r.volume)}</td>
+    <td>${(r.brandCTR*100).toFixed(2)}%</td>
+    <td>${(r.brandPurchRate*100).toFixed(1)}%</td>
+    <td>
+      <div class="score-bar">
+        <div class="score-bg"><div class="score-fill\" style=\"width:${r.oppScore}%;background:${scoreColor(r.oppScore)}\"></div></div>
+        <strong style=\"color:${scoreColor(r.oppScore)}\">${r.oppScore}</strong>
+      </div>
+    </td>
+    <td><span class=\"badge ${r.health.cls}\">${r.health.label}</span></td>
+  </tr>`).join('');
+}
+
+function sortOppTable(col) {
+  if (oppTableSort.col === col) oppTableSort.dir = oppTableSort.dir === 'asc' ? 'desc' : 'asc';
+  else { oppTableSort.col = col; oppTableSort.dir = 'desc'; }
+  renderOpportunityTable();
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   QUERY TABLE
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderQueryTable(page) {
+  queryTablePage = page || 1;
+  const rows = window._curRows || [];
+  const search = document.getElementById('querySearch')?.value?.toLowerCase() || '';
+  const health = document.getElementById('healthFilter')?.value || 'all';
+  const minVol = parseInt(document.getElementById('minVolumeFilter')?.value || '0');
+
+  let filtered = rows.filter(r => {
+    if (search && !r.query.toLowerCase().includes(search)) return false;
+    if (health !== 'all' && r.health.cls !== health) return false;
+    if (r.volume < minVol) return false;
+    return true;
+  });
+
+  const col = queryTableSort.col, dir = queryTableSort.dir;
+  filtered.sort((a,b) => {
+    let av = a[col], bv = b[col];
+    if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+    const v = av>bv?1:av<bv?-1:0;
+    return dir==='asc'?v:-v;
+  });
+
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const page_rows = filtered.slice((queryTablePage-1)*PAGE_SIZE, queryTablePage*PAGE_SIZE);
+
+  const tbody = document.getElementById('queryTableBody');
+  tbody.innerHTML = page_rows.map(r => {
+    const wow = r.prev ? delta(r.volume, r.prev.volume) : null;
+    const wowHtml = wow===null ? '' : wow>=2 ? `<span class=\"trend-chip up\">▲ ${wow.toFixed(0)}%</span>` : wow<=-2 ? `<span class=\"trend-chip down\">▼ ${Math.abs(wow).toFixed(0)}%</span>` : '<span class=\"trend-chip flat\">→ flat</span>';
+    return `<tr>
+      <td><strong>${r.query}</strong></td>
+      <td>${fmt.num(r.volume)}</td>
+      <td>${(r.brandImpShare*100).toFixed(1)}%</td>
+      <td>${(r.brandClickShare*100).toFixed(1)}%</td>
+      <td>${(r.brandCTR*100).toFixed(2)}%</td>
+      <td>${(r.brandCartRate*100).toFixed(1)}%</td>
+      <td>${(r.brandPurchRate*100).toFixed(1)}%</td>
+      <td>
+        <div class=\"score-bar\">
+          <div class=\"score-bg\"><div class=\"score-fill\" style=\"width:${r.oppScore}%;background:${scoreColor(r.oppScore)}\"></div></div>
+          <span style=\"font-size:11px;font-weight:700;color:${scoreColor(r.oppScore)}\">${r.oppScore}</span>
+        </div>
+      </td>
+      <td><span class=\"badge ${r.health.cls}\">${r.health.label}</span></td>
+      <td>${wowHtml}</td>
+    </tr>`;
+  }).join('');
+
+  // Pagination
+  const pg = document.getElementById('queryPagination');
+  if (totalPages <= 1) { pg.innerHTML = ''; return; }
+  let btns = `<div class=\"page-info\">Showing ${(queryTablePage-1)*PAGE_SIZE+1}–${Math.min(queryTablePage*PAGE_SIZE, filtered.length)} of ${filtered.length}</div><div class=\"page-btns\">`;
+  if (queryTablePage > 1) btns += `<button class=\"page-btn\" onclick=\"renderQueryTable(${queryTablePage-1})\">‹</button>`;
+  for (let p=Math.max(1,queryTablePage-2); p<=Math.min(totalPages,queryTablePage+2); p++) {
+    btns += `<button class=\"page-btn ${p===queryTablePage?'active':''}\" onclick=\"renderQueryTable(${p})\">${p}</button>`;
+  }
+  if (queryTablePage < totalPages) btns += `<button class=\"page-btn\" onclick=\"renderQueryTable(${queryTablePage+1})\">›</button>`;
+  btns += '</div>';
+  pg.innerHTML = btns;
+}
+
+function sortQueryTable(col) {
+  if (queryTableSort.col === col) queryTableSort.dir = queryTableSort.dir === 'asc' ? 'desc' : 'asc';
+  else { queryTableSort.col = col; queryTableSort.dir = 'desc'; }
+  document.querySelectorAll('#queryTable thead th').forEach(th => th.classList.remove('sorted'));
+  renderQueryTable(1);
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   MARKET SHARE CHARTS
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderMarketShareCharts(rows) {
+  const donutOpts = (label) => ({
+    responsive:true, maintainAspectRatio:false, cutout:'60%', animation:false,
+    plugins:{ legend:{position:'bottom', labels:{font:{size:10}, usePointStyle:true}},
+      tooltip:{callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0); return `${c.label}: ${(c.parsed/t*100).toFixed(1)}%`;}}}
+    }
+  });
+  const colors = ['#067D62','#CC0C39','#8D9096'];
+
+  [['impShareChart','Impression','iT','iB','iC','iO'],
+   ['clickShare2Chart','Click','cT','cB','cC','cO'],
+   ['cartShareChart','Cart','aT','aB','aC','aO'],
+   ['purchShareChart','Purchase','pT','pB','pC','pO'],
+  ].forEach(([id,,tK,bK,cK,oK]) => {
+    const B=rows.reduce((s,r)=>s+r[bK],0), C=rows.reduce((s,r)=>s+r[cK],0), O=Math.max(rows.reduce((s,r)=>s+r[tK],0)-B-C,0);
+    destroyChart(id);
+    charts[id] = new Chart(document.getElementById(id).getContext('2d'), {
+      type:'doughnut', data:{labels:['Brand','Competitor','Other'], datasets:[{data:[B,C,O], backgroundColor:colors, borderWidth:2, borderColor:'#fff'}]},
+      options: donutOpts()
+    });
+  });
+
+  // Stacked bar — top 10 by click volume
+  const top10 = [...rows].sort((a,b)=>b.cT-a.cT).slice(0,10);
+  destroyChart('stackedShareChart');
+  charts.stackedShareChart = new Chart(document.getElementById('stackedShareChart').getContext('2d'), {
+    type:'bar',
+    data:{
+      labels: top10.map(r=>r.query.length>20?r.query.slice(0,20)+'…':r.query),
+      datasets:[
+        {label:'Brand', data:top10.map(r=>+(r.brandClickShare*100).toFixed(1)), backgroundColor:'#067D62', borderRadius:0},
+        {label:'Competitor', data:top10.map(r=>+(r.cC/Math.max(r.cT,1)*100).toFixed(1)), backgroundColor:'#CC0C39', borderRadius:0},
+        {label:'Other', data:top10.map(r=>+((r.cO||0)/Math.max(r.cT,1)*100).toFixed(1)), backgroundColor:'#8D9096', borderRadius:0},
+      ]
+    },
+    options:{
+      indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:false,
+      plugins:{legend:{position:'top'}, tooltip:{mode:'index'}},
+      scales:{
+        x:{stacked:true, max:100, ticks:{callback:v=>v+'%'}, grid:{display:false}},
+        y:{stacked:true, grid:{display:false}, ticks:{font:{size:11}}}
+      }
+    }
+  });
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   TRENDS CHARTS
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderTrendsCharts() {
+  const trendData = weeks.map(w => {
+    const rows = computeMetrics(allData.filter(r=>r.week===w));
+    const iT=rows.reduce((s,r)=>s+r.iT,0), iB=rows.reduce((s,r)=>s+r.iB,0);
+    const cT=rows.reduce((s,r)=>s+r.cT,0), cB=rows.reduce((s,r)=>s+r.cB,0);
+    const pT=rows.reduce((s,r)=>s+r.pT,0), pB=rows.reduce((s,r)=>s+r.pB,0);
+    const vol=rows.reduce((s,r)=>s+r.volume,0);
+    return { week:w, impShare:iT>0?(iB/iT*100):0, brandCTR:iB>0?(cB/iB*100):0, brandConv:cB>0?(pB/cB*100):0, volume:vol };
+  });
+
+  const lineOpts = (label, color, fmt_fn) => ({
+    responsive:true, maintainAspectRatio:false, animation:false,
+    plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>` ${fmt_fn(c.parsed.y)}`}}},
+    scales:{
+      x:{ grid:{display:false}, ticks:{font:{size:11}} },
+      y:{ beginAtZero:false, ticks:{callback:v=>fmt_fn(v)}, grid:{color:'rgba(0,0,0,0.05)'} }
+    }
+  });
+
+  [
+    ['trendImpChart', 'Brand Imp Share', trendData.map(d=>+d.impShare.toFixed(2)), '#37475A', v=>v.toFixed(1)+'%'],
+    ['trendCTRChart', 'Brand CTR', trendData.map(d=>+d.brandCTR.toFixed(3)), '#FF9900', v=>v.toFixed(2)+'%'],
+    ['trendConvChart', 'Purchase Rate', trendData.map(d=>+d.brandConv.toFixed(2)), '#067D62', v=>v.toFixed(1)+'%'],
+    ['trendVolChart', 'Total Volume', trendData.map(d=>d.volume), '#0066C0', v=>fmt.num(v)],
+  ].forEach(([id, label, data, color, f]) => {
+    destroyChart(id);
+    charts[id] = new Chart(document.getElementById(id).getContext('2d'), {
+      type:'line',
+      data:{ labels:weeks, datasets:[{label, data, borderColor:color, backgroundColor:color+'20', borderWidth:2.5, fill:true, tension:0.3, pointRadius:4, pointBackgroundColor:color}]},
+      options: lineOpts(label, color, f)
+    });
+  });
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   WoW MOVERS
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function renderMovers(cur, prev) {
+  if (!prev.length) {
+    document.getElementById('gainersBody').innerHTML = '<tr><td colspan=\"3\" style=\"color:#999;font-size:12px;padding:12px;\">Need at least 2 weeks of data</td></tr>';
+    document.getElementById('losersBody').innerHTML = '<tr><td colspan=\"3\" style=\"color:#999;font-size:12px;padding:12px;\">Need at least 2 weeks of data</td></tr>';
+    return;
+  }
+  const prevMap = {};
+  prev.forEach(r => prevMap[r.query] = r);
+  const changes = cur.filter(r => prevMap[r.query]).map(r => ({
+    query: r.query,
+    volume: r.volume,
+    change: delta(r.volume, prevMap[r.query].volume)
+  })).filter(r => r.change !== null).sort((a,b)=>b.change-a.change);
+
+  const gainers = changes.slice(0,5);
+  const losers = [...changes].sort((a,b)=>a.change-b.change).slice(0,5);
+
+  document.getElementById('gainersBody').innerHTML = gainers.map(r=>`<tr>
+    <td>${r.query}</td><td>${fmt.num(r.volume)}</td>
+    <td class=\"top-mover\">▲ ${r.change.toFixed(1)}%</td>
+  </tr>`).join('');
+  document.getElementById('losersBody').innerHTML = losers.map(r=>`<tr>
+    <td>${r.query}</td><td>${fmt.num(r.volume)}</td>
+    <td class=\"bottom-mover\">▼ ${Math.abs(r.change).toFixed(1)}%</td>
+  </tr>`).join('');
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   TAB SWITCHING
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   EXPORT CSV
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+function exportCSV() {
+  const rows = window._curRows || [];
+  if (!rows.length) return;
+  const cols = ['query','volume','brandImpShare','brandClickShare','brandCTR','brandCartRate','brandPurchRate','oppScore'];
+  const headers = ['Search Query','Volume','Brand Imp Share','Brand Click Share','Brand CTR','Brand Cart Rate','Brand Purchase Rate','Opp Score','Health'];
+  let csv = headers.join(',') + '\n';
+  rows.forEach(r => {
+    csv += [r.query, r.volume, (r.brandImpShare*100).toFixed(2), (r.brandClickShare*100).toFixed(2),
+      (r.brandCTR*100).toFixed(3), (r.brandCartRate*100).toFixed(2), (r.brandPurchRate*100).toFixed(2),
+      r.oppScore, r.health.label].map(v=>`\"${v}\"`).join(',') + '\n';
+  });
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = `sqp-analysis-${weeks[currentWeekIdx]}.csv`; a.click();
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+   INIT
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ */
+document.getElementById('emptyState').style.display = 'block';
+</script>
+</body>
+</html>
